@@ -1,25 +1,20 @@
 <template>
   <ul class="list-group">
-    <li class="list-group-item"
-        v-for="(content, index) in todoItems"
-        v-bind:key="index">
-      {{ content }}
-      <EditButton />
-      <DeleteButton :index="index" :content="content" @delete-todo="deleteTodo" />
-    </li>
+    <ListItem v-for="(content, index) in todoItems"
+              :index="index"
+              :content="content"
+              :key="index" />
   </ul>
 </template>
 
 <script>
-import EditButton from "./EditButton.vue"
-import DeleteButton from "./DeleteButton.vue"
+import ListItem from "./ListItem.vue"
 
 export default {
   name: 'TodoList',
   props: ['todoItems'],
   components: {
-    EditButton,
-    DeleteButton
+    ListItem
   },
   methods: {
     deleteTodo (index) {
