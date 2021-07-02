@@ -1,11 +1,11 @@
 <template>
   <ul class="list-group">
     <li class="list-group-item"
-        v-for="(value, key) in todoItems"
-        v-bind:key="key">
-      {{ value }}
+        v-for="(content, index) in todoItems"
+        v-bind:key="index">
+      {{ content }}
       <EditButton />
-      <DeleteButton />
+      <DeleteButton :index="index" :content="content" @delete-todo="deleteTodo" />
     </li>
   </ul>
 </template>
@@ -20,6 +20,11 @@ export default {
   components: {
     EditButton,
     DeleteButton
+  },
+  methods: {
+    deleteTodo (index) {
+      this.$emit('deleteTodo', index)
+    }
   }
 }
 </script>
