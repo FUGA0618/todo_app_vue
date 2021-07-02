@@ -3,7 +3,8 @@
     <ListItem v-for="(content, index) in todoItems"
               :index="index"
               :content="content"
-              :key="index" />
+              :key="index"
+              @delete-todo="deleteTodo" />
   </ul>
 </template>
 

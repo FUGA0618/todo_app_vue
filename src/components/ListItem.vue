@@ -3,7 +3,7 @@
     {{ content }}
     <input type="text" :value="content">
     <EditButton />
-    <DeleteButton :index="index" @delete-todo="deleteTodo" />
+    <DeleteButton @delete-todo="deleteTodo" />
   </li>
 </template>
 
@@ -19,8 +19,8 @@ export default {
     DeleteButton
   },
   methods: {
-    deleteTodo (index) {
-      this.$emit('deleteTodo', index)
+    deleteTodo () {
+      this.$emit('deleteTodo', this.index)
     }
   }
 }

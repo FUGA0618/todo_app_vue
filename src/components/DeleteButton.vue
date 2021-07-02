@@ -5,10 +5,9 @@
 <script>
 export default {
   name: 'DeleteButton',
-  props: ['index'],
   methods: {
     deleteTodo () {
-      this.$emit('deleteTodo', this.index)
+      this.$emit('deleteTodo')
     }
   }
 }
