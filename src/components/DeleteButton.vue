@@ -5,7 +5,7 @@
 <script>
 export default {
   name: 'DeleteButton',
-  props: ['index', 'content'],
+  props: ['index'],
   methods: {
     deleteTodo () {
       this.$emit('deleteTodo', this.index)
