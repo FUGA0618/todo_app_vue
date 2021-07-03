@@ -1,7 +1,8 @@
 <template>
   <li class="list-group-item">
-    <input v-if="editFlg" type="text"
-           v-model="content"
+    <input type="text"
+           v-if="editFlg"
+           :value="content"
            @keypress.enter="updateTodo">
     <span v-else>{{ content }}</span>
     <EditButton @toggle-edit-flg="toggleEditFlg" />
@@ -26,8 +27,8 @@ export default {
     }
   },
   methods: {
-    updateTodo () {
-      this.$emit('updateTodo', this.index, this.content)
+    updateTodo (e) {
+      this.$emit('updateTodo', this.index, e.target.value)
       this.editFlg = !this.editFlg
     },
     deleteTodo () {
