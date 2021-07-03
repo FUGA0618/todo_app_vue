@@ -1,5 +1,7 @@
 <template>
-  <i class="bi bi-trash-fill" @click="deleteTodo"></i>
+  <a @click="deleteTodo">
+    <i class="bi bi-trash-fill"></i>削除
+  </a>
 </template>
 
 <script>
@@ -14,7 +16,7 @@ export default {
 </script>
 
 <style>
-.bi-trash-fill:hover {
+a:hover {
   cursor: pointer;
 }
 </style>

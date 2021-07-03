@@ -1,5 +1,7 @@
 <template>
-  <i class="bi bi-pencil-fill" @click="toggleEditFlg"></i>
+  <a @click="toggleEditFlg">
+    <i class="bi bi-pencil-fill"></i>編集
+  </a>
 </template>
 
 <script>
@@ -14,7 +16,7 @@ export default {
 </script>
 
 <style>
-.bi-pencil-fill:hover {
+a:hover {
   cursor: pointer;
 }
 </style>
