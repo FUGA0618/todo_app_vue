@@ -12,3 +12,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.bi-pencil-fill:hover {
+  cursor: pointer;
+}
+</style>

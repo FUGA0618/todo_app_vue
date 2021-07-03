@@ -12,3 +12,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.bi-trash-fill:hover {
+  cursor: pointer;
+}
+</style>
