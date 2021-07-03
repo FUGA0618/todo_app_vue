@@ -4,7 +4,8 @@
               :index="index"
               :content="content"
               :key="index"
-              @delete-todo="deleteTodo" />
+              @delete-todo="deleteTodo"
+              @update-todo="updateTodo" />
   </ul>
 </template>
 
@@ -18,6 +19,9 @@ export default {
     ListItem
   },
   methods: {
+    updateTodo (...newTodo) {
+      this.$emit('updateTodo', newTodo)
+    },
     deleteTodo (index) {
       this.$emit('deleteTodo', index)
     }

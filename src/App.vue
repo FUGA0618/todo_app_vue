@@ -1,6 +1,8 @@
 <template>
   <NewTodoField @add-todo="addTodo" />
-  <TodoList :todo-items="todoItems" @delete-todo="deleteTodo" />
+  <TodoList :todo-items="todoItems"
+            @update-todo="updateTodo"
+            @delete-todo="deleteTodo" />
 </template>
 
 <script>
@@ -33,8 +35,12 @@ export default {
       localStorage.setItem(`${nextId}`, content)
       this.todoItems = this.getAllStorageData()
     },
+    updateTodo (newTodo) {
+      const [index, content] = newTodo
+      localStorage.setItem(index, content)
+      this.todoItems = this.getAllStorageData()
+    },
     deleteTodo (index) {
-      console.log(`deleteTodo: ${index}`)
       localStorage.removeItem(index)
       this.todoItems = this.getAllStorageData()
     }
